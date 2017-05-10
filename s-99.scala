@@ -30,3 +30,10 @@ def reverse[A](ls: List[A]): List[A] = ls match {
   case Nil => Nil
   case head :: tail => reverse(tail) :+ head
 }
+
+// P06
+def isPalindrome[A](ls: List[A]): Boolean = ls match {
+  case Nil => true
+  case _ :: Nil => true
+  case first :: (middle :+ last) => first == last && isPalindrome(middle)
+}
