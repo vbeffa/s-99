@@ -25,6 +25,8 @@ def length[A](ls: List[A]): Int = ls match {
   case _ :: tail => 1 + length(tail)
 }
 
+def length[A](ls: List[A]): Int = ls.foldLeft(0)((acc, _) => acc + 1)
+
 // P05
 def reverse[A](ls: List[A]): List[A] = ls match {
   case Nil => Nil
